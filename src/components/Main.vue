@@ -190,29 +190,15 @@
 
 <style scoped lang="scss">
 @use "../scss/partials/vars" as *;
-
-/* main  */
-
 main {
   padding-top: 80px;
-}
-
-main .container {
-  gap: 10px;
-  flex-wrap: wrap;
-	justify-content: center;
-	align-content: start;
-  margin: 40px auto;
-}
-
-
-
-
-
-
-/* card empty  */
-
-main {
+  .container {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+    margin: 40px auto;
+  }
   .card {
     flex-basis: 30%;
     max-width: 300px;
@@ -227,115 +213,101 @@ main {
       display: none;
     }
     .favourite {
+      position: absolute;
+      display: flex;
+      right: 0;
+      top: 10px;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      background-color: white;
+      font-size: 1.2rem;
+      &:hover{
+        color: $red-discount;
+      }
+    &:hover {
+      .std-img {
+        display: none;
+      }
+      .hover-img {
+        display: block;
+      }
+    }
+  }
+  .box{
+    color: white;
+    font-size: 0.8rem;
     position: absolute;
-    display: flex;
-    right: 0;
-    top: 10px;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    background-color: white;
-    font-size: 1.2rem;
+    bottom: 50px;
+    display: none;
+    .stb,
+    .dsc {
+      padding: 5px 10px;
+    }
+    .dsc {
+      background-color: var(--red-discount);
+    }
+    .stb {
+      background-color: var(--green);
+    }
+    .details {
+      padding-top: 5px;
+      .description {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .brand {
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
+      .price.dsc {
+        color: var(--red-discount);
+        text-decoration: none;
+        &::after{
+          content: "\20AC";
+        }
+      }
+      .price{
+        padding-left: 5px;
+        text-decoration: line-through;
+        &::after{
+          content: "\20AC";
+        }
+      }
+    }
+  }
+  .card.dsc{
+    .box {
+      display: block;
+      .stb {
+        display: none;
+      }
+    }
+  }
+  .card.stb{
+    .box {
+      display: block;
+      .dsc {
+        display: none;
+      }
+    }
+  }
+  .card.dsc-stb{
+    .box {
+      display: block;
+      .stb {
+        display: inline-block;
+      }
+    }
   }
   }
 
 }
 
-
-
-
-
-.card .box{
-  color: white;
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: 50px;
-  display: none;
-}
-
-.card .box .stb,
-.card .box .dsc {
-  padding: 5px 10px;
-}
-
-.card .box .dsc {
-  background-color: var(--red-discount);
-}
-.card .box .stb {
-  background-color: var(--green);
-}
-
-.card .details {
-  padding-top: 5px;
-}
-
-.card .details .brand {
-  font-size: 0.8rem;
-  font-weight: 300;
-}
-
-.card .details .description {
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.card .details .price.dsc {
-  color: var(--red-discount);
-  text-decoration: none;
-}
-
-.card .details .price{
-  padding-left: 5px;
-  text-decoration: line-through;
-}
-
-.card .details .price.dsc::after,
-.card .details .price::after{
-  content: "\20AC";
-}
-
-/* card discount  */
-
-.card.dsc .box {
-  display: block;
-}
-.card.dsc .box .stb {
-  display: none;
-}
-
-/* card sostenibility  */
-
-.card.stb .box {
-  display: block;
-}
-.card.stb .box .dsc {
-  display: none;
-}
-
-/* card discount sostenibility */
-
-.card.dsc-stb .box {
-  display: block;
-}
-
-.card.dsc-stb .box .stb {
-  display: inline-block;
-}
-
-
-/* hover  */
-
-.card:hover .std-img {
-  display: none;
-}
-
-.card:hover .hover-img {
-  display: block;
-}
 
 .favourite:hover {
-  color: var(--red-discount);
+  color: $red-discount;
 }
 
 </style>
