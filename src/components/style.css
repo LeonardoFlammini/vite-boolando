@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --red-header: #EF6630;
+  --green: #3C8108;
+  --red-discount: #ED462F;
+  --footer-color : #1A1A1A;
+
+}
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Header  */
+
+header{
+  background-color: var(--red-header);
+  color: white;
+  font-size: 0.95rem;
+}
+
+.header-fixed{
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 80px;
+  background-color: var(--red-header);
+  box-shadow:0px 2px 10px grey;
+}
+
+
+header .menu{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories,
+.icons {
+  flex-basis: 25%;
+}
+
+
+.menu .logo {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.icons {
+  flex-direction: row-reverse;
+}
+
+/* main  */
+
+main {
+  padding-top: 80px;
+}
+
+main .container {
+  gap: 10px;
+  flex-wrap: wrap;
+	justify-content: center;
+	align-content: start;
+  margin: 40px auto;
+}
+
+
+
+
+
+
+/* card empty  */
+
+main .card {
+  flex-basis: 30%;
+  max-width: 300px;
+  min-width: 250px;
+  cursor: pointer;
+  
+}
+
+.card .std-img,
+.card .hover-img {
+  position: relative;
+}
+
+.card .hover-img {
+  display: none;
+}
+
+.card .favourite {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card .favourite {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+
+}
+
+.card .box{
+  color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 50px;
+  display: none;
+}
+
+.card .box .stb,
+.card .box .dsc {
+  padding: 5px 10px;
+}
+
+.card .box .dsc {
+  background-color: var(--red-discount);
+}
+.card .box .stb {
+  background-color: var(--green);
+}
+
+.card .details {
+  padding-top: 5px;
+}
+
+.card .details .brand {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.card .details .description {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card .details .price.dsc {
+  color: var(--red-discount);
+  text-decoration: none;
+}
+
+.card .details .price{
+  padding-left: 5px;
+  text-decoration: line-through;
+}
+
+.card .details .price.dsc::after,
+.card .details .price::after{
+  content: "\20AC";
+}
+
+/* card discount  */
+
+.card.dsc .box {
+  display: block;
+}
+.card.dsc .box .stb {
+  display: none;
+}
+
+/* card sostenibility  */
+
+.card.stb .box {
+  display: block;
+}
+.card.stb .box .dsc {
+  display: none;
+}
+
+/* card discount sostenibility */
+
+.card.dsc-stb .box {
+  display: block;
+}
+
+.card.dsc-stb .box .stb {
+  display: inline-block;
+}
+
+
+/* hover  */
+
+.card:hover .std-img {
+  display: none;
+}
+
+.card:hover .hover-img {
+  display: block;
+}
+
+.favourite:hover {
+  color: var(--red-discount);
+}
+
+/* footer  */
+
+footer {
+  background-color: var(--footer-color);
+  color: white;
+  padding: 30px 0;
+}
+
+footer .container {
+  justify-content: space-between;
+}
+
+footer .company,
+footer .cta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+footer .info a{
+  font-size: 0.8rem;
+}
+
+footer .menu a{
+  font-size: 1.2rem;
+}
