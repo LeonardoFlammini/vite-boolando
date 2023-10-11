@@ -21,8 +21,5 @@ import Header from './components/Header.vue';
 
 
 <style lang="scss">
-@import "scss/general/general";
-@import "scss/general/tipography";
-@import "scss/partials/utils";
-@import "scss/partials/vars";
+@import "scss/main";
 </style>
