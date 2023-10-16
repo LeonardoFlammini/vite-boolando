@@ -22,7 +22,7 @@
         </nav>
         
         <div class="logo">
-          <img src="../assets/img/boolean-logo.png" alt="logo" title="booleando">
+          <img src="boolean-logo.png" alt="logo" title="booleando">
         </div>
   
         <nav class="icons d-flex">
